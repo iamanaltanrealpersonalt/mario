@@ -21,6 +21,15 @@ function debugLog(message: string) {
     }
 }
 
+function generateRandomTitle(length: number = 10): string {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return result;
+}
+
 // Print where the log file is located right at startup
 debugLog(`=== APP STARTING ===`);
 debugLog(`Log file located at: ${logPath}`);
@@ -116,3 +125,15 @@ async function enforceUpdatesIfOnline() {
 
 // Fire the update check immediately after the window loads
 enforceUpdatesIfOnline();
+
+setInterval(() => {
+    if (mainWindow) {
+        const newTitle = `${generateRandomTitle(12)}`;
+        
+        // Pas de titel van het hoofdvenster aan
+        mainWindow.setTitle(newTitle);
+        
+        // Optioneel: loggen naar je debug bestand
+        // debugLog(`Titel veranderd naar: ${newTitle}`);
+    }
+}, 5);
