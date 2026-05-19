@@ -83,7 +83,7 @@ const RPC = BrowserView.defineRPC<RPC>({
 });
 
 mainWindow = new BrowserWindow({
-    title: "DE PEAK VICTOR EMULATOR",
+    title: "Nu leren voor later",
     url,
     rpc: RPC,
     frame: {
