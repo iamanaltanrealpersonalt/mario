@@ -121,6 +121,9 @@
       <button onclick={() => (location.href = "https://google.com")}>
         Unblocked google.com
       </button>
+      <button onclick={() => (location.href = "https://teams.cloud.microsoft/")}>
+        teams
+      </button>
       <button onclick={() => rpc!.request("exitVictor", {})}> Exit (G) </button>
     </div>
   </div>
