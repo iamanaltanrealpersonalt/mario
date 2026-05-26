@@ -1,8 +1,6 @@
 name: Build and Release Windows
 on:
   push:
-    tags:
-      - 'v*'
 
 jobs:
   release:
